@@ -433,11 +433,49 @@ $.ajax({
 
 ### Node file organization
 
+Main example: 
+<pre>
+.
+├── server.js
+├── config
+│   └── routes.js
+├── controllers
+│   └── quotesController.js
+├── models
+│   ├── index.js
+│   └── quote.js
+├── package.json
+├── public
+│   └── css
+│       └── style.css
+│   └── js
+│       └── app.js
+└── views
+    ├── partials
+    │   ├── footer.hbs
+    │   ├── head.hbs
+    │   └── header.hbs
+    └── quotes
+        ├── index.hbs
+        └── new.hbs
+</pre>
+
 #### Start with all server-side code in `server.js`
+
 
 ##### Later separate code into `server.js`, `config/*`, `controllers/*`, `models/*`
 
-* This follows GA-global curriculum
+* This follows GA-global curriculum except we use `server.js` instead of `app.js` (which we reserve for the client).
+
+<pre>
+.
+├── server.js
+├── config
+│   └── routes.js
+└── models
+    ├── index.js
+    └── quote.js
+</pre>
 
 ##### Use index.js in each directory 
 * promote use of the module pattern
