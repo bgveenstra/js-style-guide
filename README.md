@@ -16,12 +16,12 @@ This styleguide is different in that it is focused on teaching & learning JS, st
 ```css
 /* avoid tabs */
 .ridiculously-huge {
-	font-size: 100
+	font-size: 100px;
 }
 
 /* recommended */
 .ridiculously-huge {
-  font-size: 100
+  font-size: 100px;
 }
 ```
 
@@ -238,7 +238,7 @@ $('#items')
 
 #### Prefer named functions over anonymous functions 
 
-> This rule is particularly important in the first 2-3 weeks of the course.  However, we should eventually introduce anonymous functions.
+> This rule is particularly important in the first 2-3 weeks of the course.  However, we should eventually introduce and use anonymous functions.
 
 ```js
 // avoid
@@ -277,6 +277,7 @@ function boilPasta() {
 
 * It overrides the arguments object the function receives.
 
+```js
 // avoid
 function nope(name, options, arguments) {
   // ...stuff...
@@ -286,6 +287,7 @@ function nope(name, options, arguments) {
 function yup(name, options, args) {
   // ...stuff...
 }
+```
 
 > lifted from airbnb
 
@@ -368,7 +370,7 @@ function onComplete( xhr, status ) {
 $.get("http://pokemon.com/api/pokemon").success(renderPokemonList(json));
 
 // recommended
-$.ajax$.ajax({
+$.ajax({
     url: "http://pokemon.com/api/pokemon",
     type: "GET",
     dataType : "json",
@@ -428,8 +430,6 @@ $.ajax({
 #### Separate assets into directories `scripts`, `styles`
 -->
 #### Name the initial client-side JS file `app.js`
-
-#### Name the initial server-side JS file `server.js`
 
 ### Node file organization
 
