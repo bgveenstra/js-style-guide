@@ -116,11 +116,11 @@ Strings that cause the line to exceed ~100 characters should be concatenated acr
 var html = '<ol><li>Of shoes</li><li>and ships</li><li>and sealing-wax</li><li>Of cabbages</li><li>and kings</li></ol>'; // Lewis Carroll
 
 // less bad
-var html = '<ol>
+var html = '<ol> \
               <li>Of shoes</li> \
               <li>and ships</li> \
-              <li>and sealing-wax</li>\ 
-              <li>Of cabbages</li>
+              <li>and sealing-wax</li> \ 
+              <li>Of cabbages</li> \
               <li>and kings</li> \
               </ol>'; // Lewis Carroll
 
