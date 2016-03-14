@@ -441,3 +441,19 @@ $.ajax({
 
 
 ## File Organization
+
+<!-- 
+#### Separate assets into directories `scripts`, `styles`
+-->
+#### Name the initial client-side JS file `app.js`
+
+#### Name the initial server-side JS file `server.js`
+
+### Node file organization
+
+#### Start with all server-side code in `server.js`
+
+##### Later separate code into `server.js`, `config/*`, `controllers/*`, `models/*`
+
+##### Use index.js in each directory 
+* promote use of the module pattern
