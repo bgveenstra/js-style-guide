@@ -1,10 +1,12 @@
-# Javascript style-guide
+# Javascript and introduction to web development style-guide
 
+## Why?
+There are style-guides already available for JavaScript and indeed, at least 3 tools for linting and verifying styles.  Why do we need another?
 
+This styleguide is different in that it is focused on teaching & learning JS, starting with front-end JavaScript and CSS and eventually teaching jQuery, Node, Express and friends. When we teach we generally increase complexity over time. This guide aims to set guidelines to ensure that syntax across lessons is the same, while slowly introducing additional syntactical complexity.
 
-<a name="use-spaces-around-arguments"></a>
-Use spaces around the arguments to a function and the function parameters.
-<sup>[[link](#use-spaces-around-arguments)]</sup>
+**tldr; This style-guide is intended to make learning easier for students new to JavaScript by increasing syntactical complexity slowly, over time.**
+
 
 
 ## CSS
@@ -454,6 +456,8 @@ $.ajax({
 #### Start with all server-side code in `server.js`
 
 ##### Later separate code into `server.js`, `config/*`, `controllers/*`, `models/*`
+
+* This follows GA-global curriculum
 
 ##### Use index.js in each directory 
 * promote use of the module pattern
