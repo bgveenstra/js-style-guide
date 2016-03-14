@@ -56,7 +56,7 @@ var stuff = new Array();
 var items = [];
 ```
 
-#### Use array.push rather than index access 
+#### Use array.push rather than index access
 
 ```js
 // avoid
@@ -66,7 +66,7 @@ someStuff[someStuff.length] = 'new todo';
 someStuff.push('new todo');
 ```
 
-#### When returning multiple values use object destructuring, not arrays 
+#### When returning multiple values use object destructuring, not arrays
 
 * It's safer if the return values are ever extended.
 * Avoids mistakes in handling return value order.
@@ -99,18 +99,18 @@ var html = '<ol><li>Of shoes</li><li>and ships</li><li>and sealing-wax</li><li>O
 var html = '<ol> \
               <li>Of shoes</li> \
               <li>and ships</li> \
-              <li>and sealing-wax</li> \ 
+              <li>and sealing-wax</li> \
               <li>Of cabbages</li> \
               <li>and kings</li> \
               </ol>'; // Lewis Carroll
 
 
 // recommended
-var html = '<ol>' + 
+var html = '<ol>' +
               '<li>Of shoes</li>' +
-              '<li>and ships</li>' + 
+              '<li>and ships</li>' +
               '<li>and sealing-wax</li>' +
-              '<li>Of cabbages</li>' + 
+              '<li>Of cabbages</li>' +
               '<li>and kings</li>' +
             '</ol>'; // Lewis Carroll
 ```
@@ -133,7 +133,7 @@ function yay() {
 }
 ```
 
-#### Place 1 space before the opening parenthesis in control statements (if, while etc.). 
+#### Place 1 space before the opening parenthesis in control statements (if, while etc.).
 
 ```js
 // avoid
@@ -163,17 +163,17 @@ a = b + c - (d / 2);
 // avoid
 function addNumbers( a, b ) { ... }
 
-// recommended 
+// recommended
 function addNumbers(a,b) { ... }
 ```
 
 function calls:
 
 ```js
-// avoid 
+// avoid
 var addedNumbers = addNumbers( 1, x );
 
-// recommended 
+// recommended
 var addedNumbers = addNumbers(1, x);
 ```
 
@@ -205,7 +205,7 @@ use indentation when continuing a sentence. */
 ```
 
 
-#### Use leading-dots and indentation when making long method chains. 
+#### Use leading-dots and indentation when making long method chains.
 
 ```js
 // avoid
@@ -236,7 +236,7 @@ $('#items')
 
 ### Functions
 
-#### Prefer named functions over anonymous functions 
+#### Prefer named functions over anonymous functions
 
 > This rule is particularly important in the first 2-3 weeks of the course.  However, we should eventually introduce and use anonymous functions.
 
@@ -270,10 +270,10 @@ function boilPasta() {
 }
 ```
 
-#### Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. 
+#### Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead.
 
 
-#### Never name a parameter `arguments`. 
+#### Never name a parameter `arguments`.
 
 * It overrides the arguments object the function receives.
 
@@ -310,7 +310,7 @@ var kitten = new Cat;
 
 ## jQuery
 
-### Big over-arching example: 
+### Big over-arching example:
 <sup>Thanks Justin</sup>
 
 ```js
@@ -391,13 +391,13 @@ function renderPokemonList(json) { ... }
 $.ajax({
     url: "http://pizza.com/api/toppings",
     type: "GET",
-    
+
   	 // named in-line function (avoid)
     success: function populateToppingsList(data) {
     	// possibly many lines of code
     	// possibly many lines of code
     },
-    
+
     // anonymous in-line function (avoid)
     error: function(xhr, status, errorThrown) {
       // possibly many lines of code
@@ -426,14 +426,14 @@ $.ajax({
 
 ## File Organization
 
-<!-- 
+<!--
 #### Separate assets into directories `scripts`, `styles`
 -->
 #### Name the initial client-side JS file `app.js`
 
 ### Node file organization
 
-Main example: 
+Main example:
 <pre>
 .
 ├── server.js
@@ -477,5 +477,5 @@ Main example:
     └── quote.js
 </pre>
 
-##### Use index.js in each directory 
+##### Use index.js in each directory
 * promote use of the module pattern
