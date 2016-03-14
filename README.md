@@ -307,10 +307,137 @@ function yup(name, options, args) {
 
 > lifted from airbnb
 
+#### Classes or objects that will be `new`ed should use Dromedary Case
+
+```js
+// avoid
+function cat() {
+  this.sound = 'meow';
+}
+
+var kitten = new cat;
+
+// recommended
+function Cat() {
+}
+
+var kitten = new Cat;
+```
+
 ## jQuery
 
+### Big over-arching example: 
+<sup>Thanks Justin</sup>
+
+```js
+// Using the core $.ajax() method
+$.ajax({
+
+    // The URL for the request
+    url: "post.php",
+
+    // The data to send (will be converted to a query string)
+    data: {
+        id: 123
+    },
+
+    // Whether this is a POST or GET request
+    type: "GET",
+
+    // The type of data we expect back
+    dataType : "json",
+
+    // Code to run if the request succeeds;
+    // the response is passed to the function
+    success: onSuccess,
+
+    // Code to run if the request fails; the raw request and
+    // status codes are passed to the function
+    error: onError,
+
+    // Code to run regardless of success or failure
+    complete: onComplete
+});
+
+function onSuccess( json ) {
+    $("<h1>").text(json.title).appendTo("body");
+    $("<div class=\"content\">").html(json.html).appendTo("body");
+}
+
+function onError(xhr, status, errorThrown) {
+    alert("Sorry, there was a problem!");
+    console.log("Error: " + errorThrown);
+    console.log("Status: " + status);
+    console.dir(xhr);
+}
+
+function onComplete( xhr, status ) {
+    alert("The request is complete!");
+}
+```
+
+#### Use long form `$.ajax` over `$.get` and `$.post`
+
+* This makes the syntax identical for the more difficult PUT and DELETE operations.
+* Eventually students will discover the short-cut methods on their own; we should allow them to use them at that point.
+
+```js
+// avoid
+$.get("http://pokemon.com/api/pokemon").success(renderPokemonList(json));
+
+// recommended
+$.ajax$.ajax({
+    url: "http://pokemon.com/api/pokemon",
+    type: "GET",
+    dataType : "json",
+    success: renderPokemonList,
+    error: handlePokemonIndexError,
+});
+
+function renderPokemonList(json) { ... }
+```
+
+#### Use named, out-of-line functions for jQuery callbacks; introduce anonymous functions later.
+
+* In-line function definitions are hard to read and hard for students to find syntax errors around.
+* See above rule on anonymous functions as well.
+
+```js
+// avoid
+$.ajax({
+    url: "http://pizza.com/api/toppings",
+    type: "GET",
+    
+  	 // named in-line function (avoid)
+    success: function populateToppingsList(data) {
+    	// possibly many lines of code
+    	// possibly many lines of code
+    },
+    
+    // anonymous in-line function (avoid)
+    error: function(xhr, status, errorThrown) {
+      // possibly many lines of code
+      // possibly many lines of code
+    },
+});
 
 
+// recommended
+function populateToppingsList(data) {
+  // many lines of code
+}
+
+function handleToppingsError(xhr, status, errorThrown) {
+  // many lines of code
+}
+
+$.ajax({
+    url: "http://pizza.com/api/toppings",
+    type: "GET",
+    success: populateToppingsList,
+    error: handleToppingsError,
+});
+```
 
 
 ## File Organization
