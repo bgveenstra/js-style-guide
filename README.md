@@ -30,26 +30,6 @@ This styleguide is different in that it is focused on teaching & learning JS, st
 <a name="use-triple-equals"></a>
 #### Choose `===` and `!==` over `==` and `!=`. <sup>[[link](#use-triple-equals)]</sup>
 
-
-
-<a name="use-spaces-around-arguments"></a>
-#### Use spaces around the arguments to a function and the function parameters. <sup>[[link](#use-spaces-around-arguments)]</sup>
-
-```js
-// avoid
-console.log("<--- no space there, or here -->");
-
-function doMagic(a, b) { }
-```
-
-```js
-// recommended
-console.log( "<-- space to the left and the right -->" );
-
-function doMagic( a, b );
-```
-
-
 #### Use braces around any multi-line blocks.
 
 ```js
