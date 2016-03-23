@@ -426,9 +426,21 @@ $.ajax({
 
 ## File Organization
 
-<!--
+### Front-end basics file organization
+
 #### Separate assets into directories `scripts`, `styles`
--->
+
+<pre>
+├── README.md
+├── index.html
+├── scripts
+│   └── app.js
+├── styles
+│   └── styles.css
+└── images
+    └── spinner.gif
+</pre>
+
 #### Name the initial client-side JS file `app.js`
 
 ### Node file organization
@@ -446,10 +458,10 @@ Main example:
 │   └── quote.js
 ├── package.json
 ├── public
-│   └── css
-│       └── style.css
-│   └── js
-│       └── app.js
+│   └── styles
+│       └── styles.css
+│   └── scripts
+│       └── app.js
 └── views
     ├── partials
     │   ├── footer.hbs
