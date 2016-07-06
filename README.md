@@ -106,13 +106,15 @@ var html = '<ol> \
 
 
 // recommended
-var html = '<ol>' +
-              '<li>Of shoes</li>' +
-              '<li>and ships</li>' +
-              '<li>and sealing-wax</li>' +
-              '<li>Of cabbages</li>' +
-              '<li>and kings</li>' +
-            '</ol>'; // Lewis Carroll
+var html = (
+    '<ol>' +
+      '<li>Of shoes</li>' +
+      '<li>and ships</li>' +
+      '<li>and sealing-wax</li>' +
+      '<li>Of cabbages</li>' +
+      '<li>and kings</li>' +
+    '</ol>' // Lewis Carroll
+);
 ```
 
 
