@@ -56,7 +56,7 @@ var stuff = new Array();
 var items = [];
 ```
 
-#### Use array.push rather than index access
+#### Use array.push to add elements rather than index access
 
 ```js
 // avoid
@@ -66,7 +66,7 @@ someStuff[someStuff.length] = 'new todo';
 someStuff.push('new todo');
 ```
 
-#### When returning multiple values use object destructuring, not arrays
+#### When returning multiple values, use object destructuring, not arrays
 
 * It's safer if the return values are ever extended.
 * Avoids mistakes in handling return value order.
@@ -493,3 +493,65 @@ Main example:
 
 ##### Use index.js in each directory
 * promote use of the module pattern
+
+
+## ES6
+
+### `var`, `let`, `const`
+
+
+Prefer `const` for all variables that don't change and for variables that do not change which object they reference.
+
+> Note: the following code is completely valid.
+```js
+const letters = [];
+letters.push('A');
+```
+
+If `const` is not appropriate, prefer `let`. This is for values that change, including reference types that will refer to different objects.
+
+> An example of `let` for a reference type:
+```js
+let current = head;
+///
+current = current.next;
+```
+
+Avoid `var` (unless for some reason you need hoisting?).
+
+### Loops
+
+Prefer `let` over `var` or `const` for `for` loops.
+
+```js
+// old es5 style
+for (var item of arr){
+	console.log(item.price);
+}
+
+// using const in this way is confusing - avoid
+for (const item of arr){
+	console.log(item.price);
+}
+
+// best
+for (let item of arr){
+	console.log(item.price);
+}
+```
+
+### Arrow Functions
+
+Prefer arrow functions over anonymous functions.
+
+```js
+// es5
+function (a,b) { return a + b; }
+
+// preferred
+(a,b) => { return a + b; }
+```
+
+Always use braces around the function body.
+
+Always use parentheses around the parameters, even if it's a single parameter.
